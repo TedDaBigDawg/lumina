@@ -1,0 +1,249 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String           @id @default(uuid())
+  name            String
+  email           String           @unique
+  password        String
+  phone           String?
+  role            Role             @default(PARISHIONER)
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  massIntentions  MassIntention[]
+  thanksgivings   Thanksgiving[]
+  payments        Payment[]
+  eventRsvps      EventRsvp[]
+  activities      ActivityLog[]    // Added relation to ActivityLog
+
+  @@index([email])
+  @@index([role])
+}
+
+enum Role {
+  SUPERADMIN
+  ADMIN
+  PARISHIONER
+}
+
+model Mass {
+  id                        String           @id @default(uuid())
+  title                     String
+  date                      DateTime
+  location                  String
+  availableIntentionsSlots  Int
+  availableThanksgivingsSlots Int
+  status                    MassStatus       @default(AVAILABLE)
+  createdAt                 DateTime         @default(now())
+  updatedAt                 DateTime         @updatedAt
+  massIntentions            MassIntention[]
+  thanksgivings             Thanksgiving[]
+
+  @@index([date])
+  @@index([status])
+}
+
+enum MassStatus {
+  AVAILABLE
+  FULL
+}
+
+model MassIntention {
+  id          String    @id @default(uuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  massId      String
+  mass        Mass      @relation(fields: [massId], references: [id], onDelete: Cascade)
+  name        String
+  intention   String
+  status      Status    @default(PENDING)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([userId])
+  @@index([massId])
+  @@index([status])
+}
+
+model Thanksgiving {
+  id          String    @id @default(uuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  massId      String
+  mass        Mass      @relation(fields: [massId], references: [id], onDelete: Cascade)
+  description String
+  status      Status    @default(PENDING)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([userId])
+  @@index([massId])
+  @@index([status])
+}
+
+model Payment {
+  id          String        @id @default(uuid())
+  userId      String
+  user        User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  amount      Float
+  type        PaymentType
+  category    PaymentCategory?
+  description String?
+  reference   String?       @unique
+  status      PaymentStatus @default(UNPAID)
+  goalId      String?
+  goal        PaymentGoal?  @relation(fields: [goalId], references: [id])
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([userId])
+  @@index([type])
+  @@index([status])
+  @@index([goalId])
+  @@index([createdAt])
+}
+
+enum PaymentType {
+  DONATION
+  OFFERING
+}
+
+enum PaymentStatus {
+  UNPAID
+  PAID
+  FAILED
+}
+
+enum PaymentCategory {
+  TITHE
+  OFFERING
+  SPECIAL_PROJECT
+  OTHER
+}
+
+model Event {
+  id          String      @id @default(uuid())
+  title       String
+  description String
+  date        DateTime
+  location    String
+  capacity    Int?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  rsvps       EventRsvp[]
+
+  @@index([date])
+}
+
+model EventRsvp {
+  id        String    @id @default(uuid())
+  eventId   String
+  event     Event     @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@unique([eventId, userId])
+  @@index([userId])
+  @@index([eventId])
+}
+
+enum Status {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model PaymentGoal {
+  id            String          @id @default(uuid())
+  title         String
+  description   String
+  category      PaymentCategory
+  targetAmount  Float
+  currentAmount Float           @default(0)
+  startDate     DateTime
+  endDate       DateTime?
+  payments      Payment[]
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  @@index([category])
+  @@index([startDate, endDate])
+}
+
+model ChurchInfo {
+  id          String    @id @default(uuid())
+  name        String
+  address     String
+  phone       String
+  email       String
+  mission     String
+  vision      String
+  history     String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Service {
+  id          String    @id @default(uuid())
+  title       String
+  description String
+  dayOfWeek   Int       // 0 = Sunday, 1 = Monday, etc.
+  time        String    // Format: "HH:MM"
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([dayOfWeek])
+}
+
+// ActivityLog model
+model ActivityLog {
+  id          String       @id @default(uuid())
+  userId      String
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  action      String       // Description of the activity
+  type        ActivityType // Type of activity (PARISHIONER or ADMIN)
+  entityId    String?      // Optional ID of the related entity (payment, mass intention, etc.)
+  entityType  String?      // Optional type of the related entity
+  read        Boolean      @default(false) // Whether the activity has been read
+  createdAt   DateTime     @default(now())
+
+  @@index([userId])
+  @@index([type])
+  @@index([read])
+  @@index([createdAt])
+  @@index([entityId, entityType])
+}
+
+// Enum to categorize activity types
+enum ActivityType {
+  PARISHIONER
+  ADMIN
+}
+
+// Add this model to your existing schema
+model SystemNotification {
+  id        String    @id @default(uuid())
+  title     String
+  message   String
+  type      String    @default("info") // "info", "warning", "error", "success"
+  active    Boolean   @default(true)
+  userRole  String?   // Optional: target specific user roles
+  expiresAt DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@index([active, expiresAt])
+  @@index([userRole])
+}
+
