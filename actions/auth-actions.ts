@@ -7,7 +7,7 @@ import { ActivityType } from "@prisma/client"
 import { logActivity } from "./activity-actions"
 import { loginSchema, registerSchema } from "@/lib/validations"
 import { handleZodError, logError } from "@/lib/error-utils"
-import * as bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 
 // import bcrypt from "bcrypt";
 // import { prisma } from "./prisma"; // Assuming prisma is imported from somewhere

@@ -1,7 +1,7 @@
 "use server"
 
 import { z } from "zod"
-import * as bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 import { prisma } from "@/lib/db"
 import { logError } from "@/lib/error-utils"
 import crypto from "crypto"

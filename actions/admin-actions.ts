@@ -7,7 +7,7 @@ import { ActivityType } from "@prisma/client"
 import { logActivity } from "./activity-actions"
 import { handleZodError, logError } from "@/lib/error-utils"
 import { z } from "zod"
-import * as bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 
 // Validation schema for creating/updating admins
 const adminSchema = z.object({
