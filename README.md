@@ -43,3 +43,6 @@ Church Runner was born from a deep desire to serve the Church through technology
 Built with faith by Ted Osiobe
 📧 osiobeted@gmail.com
 🌐 https://builtbyted.carrd.co/
+
+> © 2025 AEON TECH. All rights reserved. Church Runner is proprietary software. For usage or partnership, contact osiobeted@gmail.com.
+
