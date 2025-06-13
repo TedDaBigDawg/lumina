@@ -1,6 +1,6 @@
 Church Runner – Proprietary Software License
 
-Copyright © 2025 AEON TECH. All rights reserved.
+Copyright © 2025 AEONOVA TECH. All rights reserved.
 
 This software and its associated files, documentation, designs, and components (collectively “Church Runner”) are the intellectual property of AEON TECH and its founder, Ted Osiobe.
 
