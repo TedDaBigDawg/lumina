@@ -4,11 +4,11 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --primary: 59, 130, 246;
+  --background-start-rgb: 245, 246, 245;
+  --background-end-rgb: 245, 246, 245;
+  --primary: 0, 48, 135;
   --primary-foreground: 255, 255, 255;
-  --secondary: 30, 58, 138;
+  --secondary: 255, 215, 0;
   --secondary-foreground: 255, 255, 255;
   --accent: 249, 115, 22;
   --accent-foreground: 255, 255, 255;
@@ -16,19 +16,21 @@
   --input-foreground: 0, 0, 0;
   --input-border: 209, 213, 219;
   --input-focus-ring: 59, 130, 246;
-  --text-primary: 17, 24, 39;
-  --text-secondary: 107, 114, 128;
+  --text-primary: 26, 26, 26;
+  --text-secondary: 255, 255, 255;
 }
+
+/* 245,246,245 */
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 245, 246, 245;
+    --background-end-rgb: 245, 246, 245;
     --input-background: 30, 41, 59;
     --input-foreground: 255, 255, 255;
     --input-border: 55, 65, 81;
-    --text-primary: 255, 255, 255;
+  --text-primary: 26, 26, 26;
     --text-secondary: 156, 163, 175;
   }
 }

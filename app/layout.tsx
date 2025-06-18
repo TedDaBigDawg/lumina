@@ -57,7 +57,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         {/* Add preload hints for critical JavaScript */}
         <link rel="modulepreload" href="/_next/static/chunks/main.js" />
       </head>
-      <body className={`${inter.className}`}>
+      <body className={`${inter.className} bg-background`}>
         <Navbar user={user} />
         <main className="flex-grow">
           <div className="">

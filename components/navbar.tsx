@@ -10,6 +10,7 @@ import { useClickOutside } from "@/hooks/use-click-outside"
 import { motion, AnimatePresence } from "framer-motion"
 import { useRouter } from "next/navigation"
 import ActivityNotifications from "./activity-notifications"
+import Image from "next/image"
 
 interface NavbarProps {
   user: {
@@ -142,17 +143,17 @@ export default function Navbar({ user }: NavbarProps) {
   }
 
   return (
-    <nav className="bg-blue-600 text-white sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+    <nav className="bg-primary text-text-secondary sticky top-0 z-50">
+      <div className="max-w-7xl py-2 mx-auto px-2 sm:px-4 lg:px-8">
         <div className="flex justify-between h-16">
-          {/* Logo/Brand section with flex-grow to push other elements right */}
-          <div className="flex items-center flex-grow">
+          <div className="flex w-full h-full items-center flex-grow">
             <Link href="/" className="flex-shrink-0 flex items-center">
-              {/* CSS-only responsive approach for consistent server/client rendering */}
-              <span className="font-bold text-xl">
-                {/* Always render the same content initially for hydration */}
-                Church Runner
-              </span>
+                <Image
+                src='/assets/transparent-logo.png'
+                width={150}
+                height={150}
+                alt="Lumina Logo"
+                />
             </Link>
           </div>
 
@@ -166,7 +167,7 @@ export default function Navbar({ user }: NavbarProps) {
                     key={item.name}
                     href={item.href}
                     className={`flex items-center px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
-                      isActive ? "bg-blue-700  border-2 " : "hover:bg-blue-500"
+                      isActive ? "bg-primary  border-2 " : "hover:bg-primary/50"
                     }`}
                     aria-current={isActive ? "page" : undefined}
                   >
@@ -204,14 +205,14 @@ export default function Navbar({ user }: NavbarProps) {
                 <div>
                   <button
                     type="button"
-                    className="flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-600 focus:ring-white transition-colors duration-200"
+                    className="flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary  focus:ring-white transition-colors duration-200"
                     id="user-menu"
                     aria-expanded={userMenuOpen}
                     aria-haspopup="true"
                     onClick={() => setUserMenuOpen(!userMenuOpen)}
                   >
                     <span className="sr-only">Open user menu</span>
-                    <div className="h-8 w-8 rounded-full bg-blue-400 flex items-center justify-center">
+                    <div className="h-8 w-8 rounded-full bg-secondary flex items-center justify-center">
                       <User className="h-5 w-5" />
                     </div>
                     <span className="ml-2 hidden md:block max-w-[100px] truncate">{user.name}</span>
@@ -340,7 +341,7 @@ export default function Navbar({ user }: NavbarProps) {
               {user && (
                 <div className="px-4 py-3 border-b border-blue-600">
                   <div className="flex items-center">
-                    <div className="h-8 w-8 rounded-full bg-blue-400 flex items-center justify-center">
+                    <div className="h-8 w-8 rounded-full bg-secondary flex items-center justify-center">
                       <User className="h-5 w-5" />
                     </div>
                     <div className="ml-3 overflow-hidden">

@@ -46,7 +46,7 @@ export function MassDetailsModal({ mass, isOpen, onClose }: MassDetailsModalProp
         <div className="flex">
           <button
             className={`px-4 py-2 text-sm font-medium ${
-              activeTab === "details" ? "border-b-2 border-blue-600 text-blue-600" : "text-gray-500 hover:text-gray-700"
+              activeTab === "details" ? "border-b-2 border-blue-600 text-[#1a1a1a]" : "text-gray-500 hover:text-gray-700"
             }`}
             onClick={() => setActiveTab("details")}
           >
@@ -55,7 +55,7 @@ export function MassDetailsModal({ mass, isOpen, onClose }: MassDetailsModalProp
           {mass.availableIntentionsSlots > 0 && (
             <button
               className={`px-4 py-2 text-sm font-medium ${
-                activeTab === "intention" ? "border-b-2 border-blue-600 text-blue-600" : "text-gray-500 hover:text-gray-700"
+                activeTab === "intention" ? "border-b-2 border-blue-600 text-[#1a1a1a]" : "text-gray-500 hover:text-gray-700"
               }`}
               onClick={() => setActiveTab("intention")}
             >
@@ -65,7 +65,7 @@ export function MassDetailsModal({ mass, isOpen, onClose }: MassDetailsModalProp
           {mass.availableThanksgivingsSlots > 0 && (
             <button
               className={`px-4 py-2 text-sm font-medium ${
-                activeTab === "thanksgiving" ? "border-b-2 border-blue-600 text-blue-600" : "text-gray-500 hover:text-gray-700"
+                activeTab === "thanksgiving" ? "border-b-2 border-blue-600 text-[#1a1a1a]" : "text-gray-500 hover:text-gray-700"
               }`}
               onClick={() => setActiveTab("thanksgiving")}
             >
@@ -78,7 +78,7 @@ export function MassDetailsModal({ mass, isOpen, onClose }: MassDetailsModalProp
         {activeTab === "details" && (
           <>
             <div className="flex items-start gap-3">
-              <Clock className="h-5 w-5 text-blue-600 mt-0.5" />
+              <Clock className="h-5 w-5 text-[#1a1a1a] mt-0.5" />
               <div>
                 <p className="font-medium text-gray-900">Time</p>
                 <p className="text-sm text-gray-600">
@@ -91,14 +91,14 @@ export function MassDetailsModal({ mass, isOpen, onClose }: MassDetailsModalProp
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <MapPin className="h-5 w-5 text-blue-600 mt-0.5" />
+              <MapPin className="h-5 w-5 text-[#1a1a1a] mt-0.5" />
               <div>
                 <p className="font-medium text-gray-900">Location</p>
                 <p className="text-sm text-gray-600">{mass.location}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Calendar className="h-5 w-5 text-blue-600 mt-0.5" />
+              <Calendar className="h-5 w-5 text-[#1a1a1a] mt-0.5" />
               <div>
                 <p className="font-medium text-gray-900">Date</p>
                 <p className="text-sm text-gray-600">

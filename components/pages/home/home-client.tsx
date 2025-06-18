@@ -66,20 +66,15 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen flex flex-col bg-background">
 
       <main className="flex-1">
         <section className="relative pt-24 pb-16 overflow-hidden">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute top-0 right-0 w-1/2 h-[600px] bg-gradient-to-bl from-blue-100 to-transparent rounded-bl-[120px] opacity-70"></div>
-            <div className="absolute top-40 left-20 w-32 h-32 rounded-full bg-gold-100 opacity-60"></div>
-            <div className="absolute bottom-0 left-0 w-1/3 h-[400px] bg-gradient-to-tr from-purple-100 to-transparent rounded-tr-[120px] opacity-70"></div>
-          </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto">
               <motion.h1
-                className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-blue-900"
+                className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-[#1a1a1a]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -87,7 +82,7 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
                 St. Kizito Catholic Church
               </motion.h1>
               <motion.p
-                className="mt-4 text-lg sm:text-xl text-gray-600"
+                className="mt-4 text-lg sm:text-xl text-[#1a1a1a]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -100,7 +95,7 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                  <Button className="w-full sm:w-auto bg-gold-500 hover:bg-gold-600 text-blue-900 font-semibold px-8 py-3 text-lg rounded-full">
+                  <Button className="w-full sm:w-auto bg-secondary hover:bg-gold-600 text-[#1a1a1a] font-semibold px-8 py-3 text-lg rounded-full">
                 <Link className="flex mx-auto items-center justify-center" href="/services">
                     Explore Services
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -109,7 +104,7 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
                 <Link href="/register">
                   <Button
                     variant="outline"
-                    className="w-full sm:w-auto border-2 border-blue-600 text-blue-600 hover:bg-blue-50 text-lg rounded-full px-8 py-3"
+                    className="w-full sm:w-auto border-2 border-secondary text-[#1a1a1a] hover:bg-blue-50 text-lg rounded-full px-8 py-3"
                   >
                     Join Us
                   </Button>
@@ -126,7 +121,7 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent flex items-end">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary to-transparent flex items-end">
                 <div className="p-6 md:p-10 w-full">
                   <h2 className="text-white text-2xl md:text-3xl font-serif font-bold mb-2">
                     Sunday Mass
@@ -135,7 +130,7 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
                     Join us this Sunday at 9:00 AM for worship and fellowship
                   </p>
                   <Link href="/register">
-                  <Button className="z-50  bg-gold-500 hover:bg-gold-600 text-blue-900">
+                  <Button className="z-50  bg-secondary rounded-full hover:bg-secondary text-[#1a1a1a]">
                     Learn More
                   </Button>
                   </Link>
@@ -146,21 +141,21 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
         </section>
 
         {/* Quick Info Section */}
-        <section className="py-12 bg-white">
+        <section className="py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <StatCard
-                icon={<Clock className="h-6 w-6 text-blue-600" />}
+                icon={<Clock className="h-6 w-6 text-[#1a1a1a]" />}
                 value="7:00 AM, 9:00 AM, 11:00 AM"
                 label="Sunday Mass"
               />
               <StatCard
-                icon={<MapPin className="h-6 w-6 text-blue-600" />}
+                icon={<MapPin className="h-6 w-6 text-[#1a1a1a]" />}
                 value="123 Iju Ishaga, Station Juction"
                 label="Lagos, Nigeria"
               />
               <StatCard
-                icon={<Users className="h-6 w-6 text-blue-600" />}
+                icon={<Users className="h-6 w-6 text-[#1a1a1a]" />}
                 value="1000+"
                 label="Faithful Members"
               />
@@ -172,7 +167,7 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-10">
   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
     {/* Quick Access Cards */}
-    <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div className="md:col-span-2  grid grid-cols-1 sm:grid-cols-2 gap-4">
       {quickAccessLinks.map((link: any, index: any) => (
         <QuickAccessCard
           key={index}
@@ -180,25 +175,25 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
           description={link.description}
           icon={<link.icon className="h-6 w-6" />}
           href={link.href}
-          color={link.color}
-          iconColor={link.iconColor}
+          // color={link.color}
+          // iconColor={link.iconColor}
         />
       ))}
     </div>
 
     {/* Worship Schedule & Quick Links */}
     <div className="space-y-6">
-      <Card className="border-none shadow-lg bg-blue-900 text-white">
+      <Card className="border-none shadow-lg bg-gradient-to-r from-primary to-[#1a1a1a] rounded-xl text-white">
         <div className="p-6">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center">
-              <Calendar className="mr-2 h-5 w-5 text-gold-500" />
+              <Calendar className="mr-2 h-5 w-5 text-secondary" />
               <h3 className="font-serif font-bold">Mass Times</h3>
             </div>
             <Link href="/services">
               <Button
                 variant="ghost"
-                className="text-gold-500 hover:text-gold-400 hover:bg-blue-800"
+                className="text-secondary hover:text-secondary hover:bg-primary rounded-full"
               >
                 All Services
               </Button>
@@ -211,7 +206,7 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
         </div>
       </Card>
 
-      <Card className="border-none shadow-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <Card className="border-none shadow-lg bg-gradient-to-r from-primary rounded-xl to-[#1a1a1a] text-white">
         <div className="p-6">
           <h3 className="font-serif font-bold mb-4">Quick Links</h3>
           <div className="grid grid-cols-2 gap-2">
@@ -219,10 +214,10 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
                 <Button
                 key={index} 
                   variant="outline"
-                  className="w-full border-white/20 text-white hover:bg-white/10 justify-start text-sm"
+                  className="w-full border-white/20 text-white rounded-full hover:bg-white/10 justify-start text-sm"
                 >
               <Link className="flex mx-auto items-center justify-center" href={link.href}>
-                  <link.icon className="mr-1 h-3.5 w-3.5" />
+                  <link.icon className="mr-1 h-3.5 w-3.5 text-secondary" />
                   {link.title}
               </Link>
                 </Button>
@@ -241,12 +236,12 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
         <div className="p-3 sm:p-4 lg:p-6">
           <div className="flex items-center justify-between mb-3 sm:mb-4">
             <h3 className="text-base sm:text-lg lg:text-xl font-serif font-bold flex items-center">
-              <Calendar className="mr-1.5 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
+              <Calendar className="mr-1.5 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5 text-[#1a1a1a]" />
               Upcoming Masses
             </h3>
             <Badge
               variant="outline"
-              className="bg-blue-100 text-blue-800 hover:bg-blue-200 text-xs sm:text-sm"
+              className="bg-[#F5F6F5] text-[#1a1a1a] hover:bg-[#F5F6F5] text-xs sm:text-sm"
             >
               This Week
             </Badge>
@@ -256,14 +251,14 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
               {upcomingMasses.slice(0, 4).map((mass) => (
                 <Card
                   key={mass.id}
-                  className="border-none shadow-md hover:shadow-lg transition-all bg-white rounded-xl"
+                  className="border-none shadow-md hover:shadow-lg transition-all bg-background rounded-xl"
                 >
-                  <div className="bg-blue-600 text-white rounded-t-xl p-2 sm:p-3 lg:p-4">
+                  <div className="bg-primary text-white rounded-t-xl p-2 sm:p-3 lg:p-4">
                     <div className="flex justify-between items-center">
                       <h4 className="text-sm sm:text-base lg:text-lg font-semibold line-clamp-1">
                         {mass.title}
                       </h4>
-                      <span className="bg-blue-800 text-xs font-medium px-1.5 sm:px-2 py-0.5 sm:py-1 rounded">
+                      <span className="bg-primary text-xs font-medium px-1.5 sm:px-2 py-0.5 sm:py-1 rounded">
                         {mass.availableIntentionsSlots > 0
                           ? `${mass.availableIntentionsSlots} slots`
                           : "Full"}
@@ -290,19 +285,19 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
                           })}
                         </p>
                         <p className="mt-1 text-xs sm:text-sm text-gray-600 flex items-center">
-                          <Clock className="h-3 w-3 sm:h-3.5 sm:w-3.5 lg:h-4 lg:w-4 mr-1 text-blue-600" />
+                          <Clock className="h-3 w-3 sm:h-3.5 sm:w-3.5 lg:h-4 lg:w-4 mr-1 text-[#1a1a1a]" />
                           {new Date(mass.date).toLocaleTimeString("en-US", {
                             hour: "2-digit",
                             minute: "2-digit",
                           })}
                         </p>
                         <p className="mt-1 text-xs sm:text-sm text-gray-600 flex items-center line-clamp-1">
-                          <MapPin className="h-3 w-3 sm:h-3.5 sm:w-3.5 lg:h-4 lg:w-4 mr-1 text-blue-600" />
+                          <MapPin className="h-3 w-3 sm:h-3.5 sm:w-3.5 lg:h-4 lg:w-4 mr-1 text-[#1a1a1a]" />
                           {mass.location}
                         </p>
                         <Button
                           variant="outline"
-                          className="mt-2 sm:mt-3 lg:mt-4 w-full border-blue-600 text-blue-600 hover:bg-blue-50 text-xs sm:text-sm lg:text-base py-1.5 sm:py-2"
+                          className="mt-2 sm:mt-3 lg:mt-4 w-full border-blue-600 text-[#1a1a1a] hover:bg-blue-50 text-xs sm:text-sm lg:text-base py-1.5 sm:py-2"
                           onClick={() => openMassModal(mass)}
                         >
                           View Details
@@ -315,20 +310,20 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
             </div>
           ) : (
             <div className="text-center py-4 sm:py-6 lg:py-8">
-              <Calendar className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-blue-600 mx-auto mb-3 sm:mb-4" />
-              <h3 className="text-sm sm:text-base lg:text-lg font-medium text-gray-900">
+              <Calendar className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-[#1a1a1a] mx-auto mb-3 sm:mb-4" />
+              <h3 className="text-sm sm:text-base lg:text-lg font-medium text-[#1a1a1a]">
                 No Upcoming Masses
               </h3>
-              <p className="text-xs sm:text-sm text-gray-600 mt-1 sm:mt-2">
+              <p className="text-xs sm:text-sm text-[#1a1a1a] mt-1 sm:mt-2">
                 Check back soon for updates.
               </p>
             </div>
           )}
         </div>
-        <div className="bg-blue-50 p-2 sm:p-3 lg:p-4 flex justify-end">
+        <div className="bg-[#F5F6F5] p-2 sm:p-3 lg:p-4 flex justify-end">
           <Button
             variant="ghost"
-            className="text-blue-600 hover:text-blue-700 hover:bg-blue-100 text-xs sm:text-sm lg:text-base"
+            className="text-[#1a1a1a]  text-xs sm:text-sm lg:text-base"
           >
             <Link className="flex items-center justify-center" href="/services">
               View All Masses
@@ -343,12 +338,12 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
         <div className="p-3 sm:p-4 lg:p-6">
           <div className="flex items-center justify-between mb-3 sm:mb-4">
             <h3 className="text-base sm:text-lg lg:text-xl font-serif font-bold flex items-center">
-              <Calendar className="mr-1.5 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5 text-purple-600" />
+              <Calendar className="mr-1.5 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5 text-[#1a1a1a]" />
               Upcoming Events
             </h3>
             <Badge
               variant="outline"
-              className="bg-purple-100 text-purple-800 hover:bg-purple-200 text-xs sm:text-sm"
+              className="bg-[#F5F6F5] text-[#1a1a1a] hover:bg-[#F5F6F5] text-xs sm:text-sm"
             >
               This Week
             </Badge>
@@ -358,13 +353,13 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
               {upcomingEvents.slice(0, 3).map((event) => (
                 <div
                   key={event.id}
-                  className="flex items-start gap-2 sm:gap-3 lg:gap-4 p-2 sm:p-3 lg:p-4 rounded-lg hover:bg-purple-50 transition-colors"
+                  className="flex items-start gap-2 sm:gap-3 lg:gap-4 p-2 sm:p-3 lg:p-4 rounded-lg hover:bg-[#F5F6F5] transition-colors"
                 >
-                  <div className="bg-purple-100 p-1.5 sm:p-2 rounded-lg text-center min-w-[44px] sm:min-w-[48px] lg:min-w-[50px]">
-                    <div className="text-base sm:text-lg lg:text-xl font-bold text-purple-700">
+                  <div className="bg-[#F5F6F5] p-1.5 sm:p-2 rounded-lg text-center min-w-[44px] sm:min-w-[48px] lg:min-w-[50px]">
+                    <div className="text-base sm:text-lg lg:text-xl font-bold text-[#1a1a1a]">
                       {new Date(event.date).getDate()}
                     </div>
-                    <div className="text-[10px] sm:text-xs text-purple-700">
+                    <div className="text-[10px] sm:text-xs text-[#1a1a1a]">
                       {new Date(event.date).toLocaleString("default", { month: "short" })}
                     </div>
                   </div>
@@ -385,7 +380,7 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
                     </p>
                     <Button
                       variant="outline"
-                      className="mt-2 sm:mt-3 lg:mt-4 w-full border-purple-600 text-purple-600 hover:bg-purple-50 text-xs sm:text-sm lg:text-base py-1.5 sm:py-2"
+                      className="mt-2 sm:mt-3 lg:mt-4 w-full border-[#1a1a1a] text-[#1a1a1a] hover:bg-[#F5F6F5] text-xs sm:text-sm lg:text-base py-1.5 sm:py-2"
                       onClick={() => openEventModal(event)}
                     >
                       View Details
@@ -396,7 +391,7 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
             </div>
           ) : (
             <div className="text-center py-4 sm:py-6 lg:py-8">
-              <Calendar className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-purple-600 mx-auto mb-3 sm:mb-4" />
+              <Calendar className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-[#1a1a1a] mx-auto mb-3 sm:mb-4" />
               <h3 className="text-sm sm:text-base lg:text-lg font-medium text-gray-900">
                 No Upcoming Events
               </h3>
@@ -406,10 +401,10 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
             </div>
           )}
         </div>
-        <div className="bg-purple-50 p-2 sm:p-3 lg:p-4 flex justify-end">
+        <div className="bg-[#F5F6F5] p-2 sm:p-3 lg:p-4 flex justify-end">
           <Button
             variant="ghost"
-            className="text-purple-600 hover:text-purple-700 hover:bg-purple-100 text-xs sm:text-sm lg:text-base"
+            className="text-[#1a1a1a] hover:text-[#1a1a1a] hover:bg-[#F5F6F5] text-xs sm:text-sm lg:text-base"
           >
             <Link className="flex items-center justify-center" href="/events">
               View Calendar
@@ -423,7 +418,7 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
 
   {/* Events and Newsletter */}
   {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-    <Card className="overflow-hidden border-none shadow-lg bg-gradient-to-br from-blue-600 to-purple-600 text-white">
+    <Card className="overflow-hidden border-none shadow-lg bg-gradient-to-br from-blue-600 to-[#1a1a1a] text-white">
       <div className="p-6">
         <h3 className="text-xl font-serif font-bold mb-4 flex items-center">
           <Heart className="mr-2 h-5 w-5" />
@@ -438,7 +433,7 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
             placeholder="Your email"
             className="bg-blue-800 border-blue-700 text-white placeholder:text-blue-400"
           />
-          <Button className="bg-gold-500 hover:bg-gold-600 text-blue-900">
+          <Button className="bg-secondary hover:bg-gold-600 text-[#1a1a1a]">
             <ArrowRight className="h-4 w-4" />
           </Button>
         </div>
@@ -451,24 +446,22 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
 </section>
 
         {/* CTA Section */}
-        <section className="relative bg-blue-900 text-white py-20">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-purple-900 opacity-90"></div>
+        <section className="relative bg-[#F5F6F5] text-[#1a1a1a] py-20">
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl sm:text-4xl font-serif font-bold">
               Join Our Faithful Community
             </h2>
-            <p className="mt-4 text-lg text-blue-100 max-w-2xl mx-auto">
+            <p className="mt-4 text-lg text-[#1a1a1a] max-w-2xl mx-auto">
               Register to access all features and stay connected with St. Kizito.
             </p>
+              <Button className="  mt-8 bg-secondary hover:bg-secondary/50 text-[#1a1a1a]  font-semibold px-8 py-4 text-lg rounded-full">
             <Link href="/register">
-              <Button className="mt-8 bg-gold-500 hover:bg-gold-600 text-blue-900 font-semibold px-8 py-4 text-lg rounded-full">
-                <UserPlus className="h-6 w-6 mr-2" />
                 Register Now
-              </Button>
             </Link>
-            <p className="mt-4 text-sm text-blue-200">
+              </Button>
+            <p className="mt-4 text-sm text-secondary">
               Already a member?{" "}
-              <Link href="/login" className="underline hover:text-white">
+              <Link href="/login" className="underline ">
                 Sign in
               </Link>
             </p>
@@ -493,9 +486,9 @@ export default function HomePage({ upcomingEvents, upcomingMasses }: HomeClientP
 
 function StatCard({ icon, value, label }: { icon: React.ReactNode; value: string; label: string }) {
   return (
-    <Card className="p-4 border-none shadow-md bg-white hover:shadow-lg transition-all">
+    <Card className="p-4 border-none shadow-xl rounded-t-xl bg-white hover:shadow-lg transition-all">
       <div className="flex items-center gap-3">
-        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100">
+        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#F5F6F5]">
           {icon}
         </div>
         <div>
@@ -512,28 +505,28 @@ function QuickAccessCard({
   description,
   icon,
   href,
-  color,
-  iconColor,
+  // color,
+  // iconColor,
 }: {
   title: string
   description: string
   icon: React.ReactNode
   href: string
-  color: string
-  iconColor: string
+  // color: string
+  // iconColor: string
 }) {
   return (
     <Link href={href} className="block h-full">
-      <Card className={`h-full fle p-6 border-none shadow-md hover:shadow-lg transition-all ${color} group`}>
+      <Card className={`h-full p-6 hover:shadow-lg transition-all border-none shadow-lg bg-gradient-to-r from-primary to-[#1a1a1a] rounded-xl text-white `}>
         <motion.div
-          className={`flex items-center justify-center w-12 h-12 rounded-full ${iconColor} text-white mb-4`}
+          className={`flex items-center justify-center w-12 h-12 rounded-full border-white/20 border-2   text-secondary mb-4`}
           whileHover={{ scale: 1.1 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
           {icon}
         </motion.div>
-        <h3 className="font-serif font-bold mb-1 text-gray-900">{title}</h3>
-        <p className="text-sm text-gray-600">{description}</p>
+        <h3 className="font-serif font-bold mb-1 text-background">{title}</h3>
+        <p className="text-sm text-background">{description}</p>
       </Card>
     </Link>
   )

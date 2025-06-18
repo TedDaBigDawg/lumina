@@ -13,7 +13,7 @@ export function SocialLink({ href, children, "aria-label": ariaLabel }: SocialLi
     <motion.a
       href={href}
       aria-label={ariaLabel}
-      className="w-9 h-9 flex items-center justify-center rounded-full bg-blue-800 text-blue-200 hover:bg-gold-500 hover:text-blue-900 transition-colors"
+      className="w-9 h-9 flex items-center justify-center rounded-full bg-secondary text-background  hover:text-[#1a1a1a] transition-colors"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >

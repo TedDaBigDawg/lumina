@@ -10,8 +10,8 @@ function getWebSocketServer() {
   if (wss === null && typeof process !== "undefined") {
     wss = new WebSocketServer({ noServer: true })
 
-    wss.on("connection", (ws) => {
-      ws.on("message", (message) => {
+    wss.on("connection", (ws: any) => {
+      ws.on("message", (message: any) => {
         console.log("Received message:", message.toString())
       })
 

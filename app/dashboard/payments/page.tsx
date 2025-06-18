@@ -18,14 +18,14 @@ export default async function DonationsPage({ searchParams }: { searchParams: { 
   const donations = payments.filter((payment) => payment.type === "DONATION")
   const offerings = payments.filter((payment) => payment.type === "OFFERING")
 
-  console.log("Payments:", payments)
-  console.log("Donations:", donations)
+  // console.log("Payments:", payments)
+  // console.log("Donations:", donations)
   // Calculate totals
   const totalDonations = donations.reduce((sum, payment) => {
     return payment.status === "PAID" ? sum + payment.amount : sum
   }, 0)
 
-  console.log("Total donations:", totalDonations)
+  // console.log("Total donations:", totalDonations)
 
   const totalOfferings = offerings.reduce((sum, payment) => {
     return payment.status === "PAID" ? sum + payment.amount : sum
@@ -46,7 +46,7 @@ export default async function DonationsPage({ searchParams }: { searchParams: { 
     {} as Record<string, number>,
   )
 
-  console.log("Total by category:", totalByCategory)
+  // console.log("Total by category:", totalByCategory)
   // Fetch donation goals
   const paymentGoals = await getActivePaymentGoals()
 

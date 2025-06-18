@@ -96,7 +96,7 @@ export default async function AdminDashboardPage() {
             title="Pending Mass Intentions"
             value={pendingMassIntentions}
             href="/admin/mass-intentions"
-            icon={<FileText className="h-5 w-5 text-blue-600" />}
+            icon={<FileText className="h-5 w-5 text-[#1a1a1a]" />}
           />
 
           <StatsCard

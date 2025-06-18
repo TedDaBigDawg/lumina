@@ -128,7 +128,7 @@ export default async function DashboardPage() {
                       <div className="flex items-center">
                         <Bell className="h-5 w-5 text-blue-500 mr-3" />
                         <div className="flex-1">
-                          <p className={`text-sm ${!activity.read ? "font-medium text-blue-900" : "text-gray-900"}`}>
+                          <p className={`text-sm ${!activity.read ? "font-medium text-[#1a1a1a]" : "text-gray-900"}`}>
                             {activity.action}
                           </p>
                           <p className="text-xs text-gray-500">{formatDate(activity.createdAt)}</p>

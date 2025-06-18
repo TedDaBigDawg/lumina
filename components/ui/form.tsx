@@ -117,7 +117,7 @@ export function FormCheckbox({ className, checked, onCheckedChange, error, ...pr
     <input
       type="checkbox"
       className={cn(
-        "h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 transition-colors duration-200",
+        "h-4 w-4 rounded border-gray-300 text-[#1a1a1a] focus:ring-blue-500 transition-colors duration-200",
         error && "border-red-500 focus:ring-red-500",
         props.disabled && "opacity-60 cursor-not-allowed",
         className,

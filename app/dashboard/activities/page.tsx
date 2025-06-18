@@ -90,7 +90,7 @@ export default function ActivitiesPage() {
         return {
           bg: "bg-blue-50",
           border: "border-blue-200",
-          icon: "bg-blue-100 text-blue-600",
+          icon: "bg-blue-100 text-[#1a1a1a]",
           title: "text-blue-800",
         }
       case "Thanksgiving":

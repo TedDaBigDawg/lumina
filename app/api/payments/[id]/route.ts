@@ -10,8 +10,9 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }
 
+    const awaitedParams = await params;
     const payment = await prisma.payment.findUnique({
-      where: { id: params.id },
+      where: { id: awaitedParams.id },
     })
 
     if (!payment) {

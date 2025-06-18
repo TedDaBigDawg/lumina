@@ -138,7 +138,7 @@ export async function createPayment(formData: FormData) {
   const rawGoalId = formData.get('goalId') as string
   let goalId = rawGoalId && rawGoalId !== 'none' ? rawGoalId : undefined
   
-  console.log("goalId: ", goalId);
+  // console.log("goalId: ", goalId);
 
   if (goalId === "none") {
     console.log("goalId is none");

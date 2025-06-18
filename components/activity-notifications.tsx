@@ -145,8 +145,8 @@ export default function ActivityNotifications() {
   return (
     <Popover open={isOpen} onOpenChange={handleOpenChange}>
       <PopoverTrigger asChild>
-        <Button variant="ghost" size="sm" className="relative hover:bg-blue-700 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
-          <Bell className="h-5 w-5" />
+        <Button variant="ghost" size="sm" className="relative hover:bg-primary rounded-full py-2 focus:ring-2 focus:ring-primary focus:ring-offset-2">
+          <Bell className="h-5 w-5 outline-secondary" />
           <AnimatePresence>
             {unreadCount > 0 && (
               <motion.span
@@ -154,7 +154,7 @@ export default function ActivityNotifications() {
                 animate={{ scale: 1 }}
                 exit={{ scale: 0 }}
                 className={`absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full text-xs font-bold text-white ${
-                  hasNewNotification ? "bg-red-600 ring-2 ring-white dark:ring-gray-800" : "bg-blue-600"
+                  hasNewNotification ? "bg-red-600 ring-2 ring-white dark:ring-gray-800" : "bg-secondary"
                 }`}
               >
                 {unreadCount > 9 ? "9+" : unreadCount}
@@ -175,7 +175,7 @@ export default function ActivityNotifications() {
               size="sm" 
               onClick={handleMarkAllAsRead} 
               disabled={isValidating}
-              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+              className="text-[#1a1a1a] hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
             >
               Mark all as read
             </Button>

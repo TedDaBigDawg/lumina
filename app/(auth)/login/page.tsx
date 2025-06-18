@@ -50,7 +50,7 @@ export default function LoginPage() {
     setIsSubmitting(true);
   
     try {
-      console.log("Submitting form with data:", formData);
+      // console.log("Submitting form with data:", formData);
   
       // const response = await fetch("/api/login", {
       //   method: "POST",
@@ -167,7 +167,7 @@ export default function LoginPage() {
         <CardFooter className="text-center">
           <p className="text-sm text-gray-600">
             Don't have an account?{" "}
-            <Link href="/register" className="font-medium text-blue-600 hover:text-blue-500">
+            <Link href="/register" className="font-medium text-[#1a1a1a] hover:text-blue-500">
               Register
             </Link>
           </p>
