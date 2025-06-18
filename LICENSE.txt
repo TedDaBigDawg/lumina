@@ -1,10 +1,10 @@
-Church Runner – Proprietary Software License
+Lumina – Proprietary Software License
 
 Copyright © 2025 AEONOVA TECH. All rights reserved.
 
-This software and its associated files, documentation, designs, and components (collectively “Church Runner”) are the intellectual property of AEON TECH and its founder, Ted Osiobe.
+This software and its associated files, documentation, designs, and components (collectively “Lumina”) are the intellectual property of AEONOVA TECH and its founder, Ted Osiobe.
 
-Permission is granted to view the code and documentation for educational or inspirational purposes only. Any reproduction, modification, distribution, or commercial use of this software, in whole or in part, is strictly prohibited without explicit written permission from AEON TECH.
+Permission is granted to view the code and documentation for educational or inspirational purposes only. Any reproduction, modification, distribution, or commercial use of this software, in whole or in part, is strictly prohibited without explicit written permission from AEONOVA TECH.
 
 Unauthorized copying, use, or replication of this product or its features may result in legal action.
 

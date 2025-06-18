@@ -1,7 +1,7 @@
-🕊️ Church Runner – Empowering Churches with Digital Grace
-Church Runner is a modern church management platform built to bring simplicity, clarity, and connection to parish life. Designed with both parishioners and church administrators in mind, it allows churches to manage essential activities such as mass intentions, thanksgiving bookings, donations, and event schedules—all in one seamless, mobile-friendly experience.
+🕊️ Lumina – Empowering Churches with Digital Grace
+Lumina is a modern church management platform built to bring simplicity, clarity, and connection to parish life. Designed with both parishioners and church administrators in mind, it allows churches to manage essential activities such as mass intentions, thanksgiving bookings, donations, and event schedules—all in one seamless, mobile-friendly experience.
 
-✨ “More than software—Church Runner is a movement. A digital revival for how the Church operates and connects with her people.”
+✨ “More than software—Lumina is a movement. A digital revival for how the Church operates and connects with her people.”
 
 🔍 Core Features
 📆 Mass Intention Booking – Let parishioners submit intentions online and receive confirmation automatically.
@@ -32,7 +32,7 @@ Payments: Paystack integration
 Messaging: Email/SMS notifications (coming soon)
 
 🎯 Project Vision
-Church Runner was born from a deep desire to serve the Church through technology. It seeks to simplify spiritual logistics, lighten the burden on priests, and empower parishioners with greater access and engagement.
+Lumina was born from a deep desire to serve the Church through technology. It seeks to simplify spiritual logistics, lighten the burden on priests, and empower parishioners with greater access and engagement.
 
 🙌 Current Status
 🚧 MVP in development.
@@ -44,5 +44,5 @@ Built with faith by Ted Osiobe
 📧 osiobeted@gmail.com
 🌐 https://builtbyted.carrd.co/
 
-> © 2025 AEONOVA TECH. All rights reserved. Church Runner is proprietary software. For usage or partnership, contact osiobeted@gmail.com.
+> © 2025 AEONOVA TECH. All rights reserved. Lumina is proprietary software. For usage or partnership, contact osiobeted@gmail.com.
 
